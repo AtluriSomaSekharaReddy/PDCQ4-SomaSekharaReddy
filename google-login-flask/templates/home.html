@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signed In Successfully</title>
+    <title>FormulaQ Solutions - Success</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
+            background: #f0f2f5;
             margin: 0;
             padding: 40px;
         }
 
         .container {
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .profile {
@@ -33,6 +33,8 @@
             border-radius: 50%;
             width: 80px;
             height: 80px;
+            object-fit: cover;
+            border: 3px solid #4285F4;
         }
 
         .hello {
@@ -45,18 +47,14 @@
         .email {
             font-size: 20px;
             color: #555;
-            margin: 10px 0;
+            margin: 8px 0;
         }
 
         .time {
             font-size: 18px;
             color: #666;
-            margin-top: 30px;
+            margin: 20px 0;
             font-weight: 500;
-        }
-
-        .logout {
-            margin-top: 30px;
         }
 
         .logout a {
@@ -68,6 +66,46 @@
         .logout a:hover {
             text-decoration: underline;
         }
+
+        .design-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+
+        .design-section h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        input[type="number"] {
+            padding: 14px;
+            width: 240px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 14px 30px;
+            font-size: 16px;
+            background: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-left: 12px;
+        }
+
+        button:hover {
+            background: #3367d6;
+        }
     </style>
 </head>
 
@@ -76,22 +114,41 @@
         <div class="profile">
             {% if picture %}
             <img src="{{ picture }}" alt="Profile">
+            {% else %}
+            <img src="https://ui-avatars.com/api/?name={{ name|urlencode }}&background=4285F4&color=fff&size=80"
+                alt="Avatar">
             {% endif %}
-            <!-- <br> -->
-        </div>
-        <div>
-            <h1 class="hello">Hello {{ name }} [<a href="{{ url_for('logout') }}"
-                    style="color:#1a73e8; text-decoration:none;">Sign out</a>]</h1>
-            <p class="email">You are signed in with the email {{ email }}</p>
+            <div>
+                <h1 class="hello">
+                    Hello {{ name }} [<a href="{{ url_for('logout') }}">Sign out</a>]
+                </h1>
+                <p class="email">You are signed in with the email {{ email }}</p>
+            </div>
         </div>
 
         <div class="time">
             Current India Time: {{ india_time }}
         </div>
 
-        <!-- <div class="logout">
-            <a href="{{ url_for('logout') }}">← Sign out</a>
-        </div> -->
+        <!-- Phase 2: Diamond Pattern Generator -->
+        <div class="design-section">
+            <h2>Enter the number of lines for the design</h2>
+            <form method="POST" class="input-group">
+                <input type="number" name="lines" min="1" max="100" placeholder="Number of Lines (1-100)" required
+                    value="{% if lines %}{{ lines }}{% endif %}">
+                <button type="submit">Display</button>
+            </form>
+
+            {% if design %}
+
+            <pre>{{ design|safe }}</pre>
+
+            {% endif %}
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="{{ url_for('logout') }}" class="logout">← Sign out</a>
+        </div>
     </div>
 </body>
 
