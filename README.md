@@ -36,7 +36,9 @@ Sign out
 #### 1. Clone the repository
 
 git clone https://github.com/AtluriSomaSekharaReddy/PDCQ4-SomaSekharaReddy.git
+
 cd PDCQ4-SomaSekharaReddy
+
 cd google-login-flask
 
 
