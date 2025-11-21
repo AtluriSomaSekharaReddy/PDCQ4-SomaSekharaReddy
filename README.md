@@ -34,14 +34,14 @@ Sign out
 ---
 
 #### 1. Clone the repository
-bash
+
 git clone https://github.com/AtluriSomaSekharaReddy/PDCQ4-SomaSekharaReddy.git
 cd PDCQ4-SomaSekharaReddy
 cd google-login-flask
 
 
 #### 2. Install dependencies
-bash
+
 pip install -r requirements.txt
 
 
@@ -61,9 +61,7 @@ pip install -r requirements.txt
 **Note**: `credentials.json` is **never uploaded** to GitHub (blocked by via `.gitignore`)
 
 #### 4. Run the app
-bash
 python app.py
-
 
 #### 5. Open in browser
 Visit: http://localhost:5000
