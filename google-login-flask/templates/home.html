@@ -118,12 +118,13 @@
             <img src="https://ui-avatars.com/api/?name={{ name|urlencode }}&background=4285F4&color=fff&size=80"
                 alt="Avatar">
             {% endif %}
-            <div>
-                <h1 class="hello">
-                    Hello {{ name }} [<a href="{{ url_for('logout') }}">Sign out</a>]
-                </h1>
-                <p class="email">You are signed in with the email {{ email }}</p>
-            </div>
+        </div>
+
+        <div>
+            <h1 class="hello">
+                Hello {{ name }} [<a href="{{ url_for('logout') }}">Sign out</a>]
+            </h1>
+            <p class="email">You are signed in with the email {{ email }}</p>
         </div>
 
         <div class="time">
@@ -144,10 +145,6 @@
             <pre>{{ design|safe }}</pre>
 
             {% endif %}
-        </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="{{ url_for('logout') }}" class="logout">← Sign out</a>
         </div>
     </div>
 </body>
