@@ -9,7 +9,7 @@ import pytz
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = '8hX9m!pL2$kQ5@zR7v_3nJ1eW4rT9yU6iO0pA5sD3fG8hJ2kL6mN1bV4cX7zR5tY'  # Change this!
+app.secret_key = '8hX9m!pL2$kQ5@zR7v_3nJ1eW4rT9yU6iO0pA5sD3fG8hJ2kL6mN1bV4cX7zR5tY'  # Dummy
 
 # Google OAuth Config
 SCOPES = [
