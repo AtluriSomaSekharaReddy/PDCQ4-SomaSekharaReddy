@@ -1,0 +1,13 @@
+credentials.json
+
+# Python cache
+__pycache__/
+*.pyc
+.env
+venv/
+.env
+
+# IDE files
+.idea/
+.vscode/
+*.iml
