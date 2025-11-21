@@ -37,6 +37,7 @@ Sign out
 bash
 git clone https://github.com/AtluriSomaSekharaReddy/PDCQ4-SomaSekharaReddy.git
 cd PDCQ4-SomaSekharaReddy
+cd google-login-flask
 
 
 #### 2. Install dependencies
@@ -73,7 +74,7 @@ Click **"Sign in with Google"** → Login → Done!
 
 ### Project Structure
 
-PDCQ4-SomaSekharaReddy/
+PDCQ4-SomaSekharaReddy/google-login-flask
 ├── app.py                  Main Flask application
 ├── requirements.txt        Python dependencies
 ├── credentials.example.json Safe template
